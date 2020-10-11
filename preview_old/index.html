@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    <meta name="description" content="Parse a GeoJSON file and display the data on a map">
+    <title>Ro Geo Map</title>
+    <link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.1/mapsjs-ui.css" />
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-core.js"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-service.js"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-ui.js"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-data.js"></script>
+    <link rel="stylesheet" type="text/css" href="viewer.css" />
+    <script type="text/javascript" src='../test-credentials.js'></script>     
+  <script src='https://developer.here.com/javascript/src/iframeheight.js'></script></head>
+  <body>
+    <div id="map"></div>
+    <div id="electionResults"></div>
+    <div id="legendC">
+        <div class="toggleButton" id="collapse">Ascunde 🔽</div>
+        <div id="legend">
+        </div>
+    </div>
+    <div id="result"></div>
+    <div id="selectElection">
+        <select id="elections">
+            <option value="primari">Primari</option>
+            <option value="consiliu_local">Consiliu Local</option>
+            <option value="consiliu_judetean">Consiliu Judetean</option>
+            <option value="primari_2">Primari Locul 2</option>
+            <option value="consiliu_local_2">Consiliu Local Locul 2</option>
+            <option value="consiliu_judetean_2">Consiliu Judetean Locul 2</option>
+        </select>
+    </div>
+    <script type="text/javascript" src='viewer.js'></script>
+  </body>
+</html>   
