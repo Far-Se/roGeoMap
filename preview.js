@@ -73,7 +73,7 @@ let darkTile = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/
 		'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
 	id: 'mapbox/dark-v9',
 	tileSize: 512,
-	zoomOffset: -1
+    zoomOffset: -1
 });
 lightTile.addTo(map);
 lightTile.addTo(map);
@@ -180,8 +180,12 @@ window.reparseData = () => {
                         {
                             feature.properties.fill = "#ffffff";
                         }
-						if (feature.properties.hasOwnProperty('Castigator')) {
-                            let castigator = feature.properties.Castigator.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+						if (feature.properties.hasOwnProperty('Castigator')||feature.properties.hasOwnProperty('Locul 2')) {
+                            let castigator = "";
+                            if(feature.properties.hasOwnProperty('Castigator'))
+                            castigator = feature.properties.Castigator.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+                            else
+                            castigator = feature.properties["Locul 2"].normalize("NFD").replace(/[\u0300-\u036f]/g, "");
                             if (!re.test(castigator)) 
                             {
                                 feature.properties['fill-opacity'] = -0.1;
